@@ -1,37 +1,37 @@
 
   # Title:
-  Title
+  title
   
   ## Description:
-  Des
+  des
 
   ### This application is covered under the license: 
   MIT
 
   ### Table of Contents: 
-  [Description](#description)
-  [Installation](#installlation-instructions) 
-  [Usage](#usage-information)
-  [Contributing](#contributing)
-  [Tests](#tests)
-  [Questions](#questions)
+  [Description](#description) <br />
+  [Installation](#installlation-instructions) <br />
+  [Usage](#usage-information) <br />
+  [Contributing](#contributing) <br />
+  [Tests](#tests) <br />
+  [Questions](#questions) <br />
 
 
   ### Installation Instructions: 
-  123
+  install
 
   ### Usage Information: 
-  usage
+  use
 
   
 
   ### Contributing: 
-  Me
+  me
 
   ### Tests: 
-  Test
+  test
 
   ### Questions: 
-  question
+  q
   ### Reach me at email with any questions
   ### Check out the rest of my repos at gh
