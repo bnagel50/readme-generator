@@ -1,7 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 // Credit to https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba for badge links
-var license;
 function renderLicenseBadge(license) {
     switch (license) {
     case 'Apache':
@@ -52,10 +51,11 @@ function renderLicenseSection(license) {
   if (!license) {
     response = ''
   } else {
-    response = renderLicenseBadge.response + '\n' + renderLicenseLink.response
+    response = renderLicenseBadge(license) + '\n' + renderLicenseLink(license)
   }
+  console.log(response)
 }
-
+renderLicenseSection();
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
@@ -67,8 +67,10 @@ function generateMarkdown(data) {
 
   ### License: 
   ${data.license}
-  ${renderLicenseSection(license)}
+  ${renderLicenseBadge(data.license)}
+  ${renderLicenseLink(data.license)}
   
+
   ### Table of Contents: 
   [Description](#description) <br />
   [Installation](#installlation-instructions) <br />
