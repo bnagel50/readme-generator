@@ -1,7 +1,9 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+// Credit to https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba for badge links
+var license;
 function renderLicenseBadge(license) {
-  switch (license) {
+    switch (license) {
     case 'Apache':
       response = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
       break;
@@ -17,20 +19,44 @@ function renderLicenseBadge(license) {
     default:
       response = '';
       break;
-  }
+    }
   return response;
 };
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  switch (license) {
+    case 'Apache':
+      response = 'https://www.apache.org/licenses/LICENSE-2.0';
+      break;
+    case 'Creative Commons':
+      response = 'https://creativecommons.org/publicdomain/zero/1.0/';
+      break;
+    case 'MIT':
+      response = 'https://opensource.org/licenses/MIT';
+      break;
+    case 'Mozilla':
+      response = 'https://www.mozilla.org/en-US/MPL/';
+      break;
+    default:
+      response = '';
+      break;
+    }
+  return response;
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (!license) {
+    response = ''
+  } else {
+    response = renderLicenseBadge.response + '\n' + renderLicenseLink.response
+  }
+}
 
 // TODO: Create a function to generate markdown for README
-
 function generateMarkdown(data) {
   return `
   # Title:
@@ -39,9 +65,10 @@ function generateMarkdown(data) {
   ## Description:
   ${data.description}
 
-  ### This application is covered under the license: 
+  ### License: 
   ${data.license}
-
+  ${renderLicenseSection(license)}
+  
   ### Table of Contents: 
   [Description](#description) <br />
   [Installation](#installlation-instructions) <br />
